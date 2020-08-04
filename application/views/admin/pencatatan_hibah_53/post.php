@@ -1,0 +1,203 @@
+
+
+
+	<ol class="breadcrumb float-xl-left">
+		<li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+		<li class="breadcrumb-item active"><?php echo anchor($this->uri->segment(1),$title);?></li>
+	</ol>
+	<h1 class="page-header"><small><?php echo anchor($this->uri->segment(1),$title);?></small></h1>
+	<div class="panel panel-inverse">
+		<div class="panel-heading">
+				<div class="panel-heading-btn">
+					<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+					<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+					<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+					<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+				</div>
+		</div>
+		
+		<div class="panel-body">
+		
+		<?php
+				// Error
+				if(isset($error)) {
+				echo '<div class="alert alert-warning">';
+				echo $error;
+				echo '</div>';
+				}
+
+			// Validasi
+				echo validation_errors('<div class="alert alert-success">','</div>');
+
+				// Form
+				echo form_open_multipart('admin/pencatatan_hibah_53/post');
+				$status=array(1=>'Aktif',2=>'Tidak Aktif');
+				$class_status    ="class='form-control' id='status'";
+			?>		
+
+		<?php {  ?>
+								
+		<fieldset>
+				<div class="row">
+					<div class="col-xl-8 offset-xl-2">
+		
+						
+						<div class="form-group row m-b-10">
+							<label class="col-lg-3 text-lg-left col-form-label">Nama Barang</label>
+								<div class="col-lg-9 col-xl-6">
+									<input type="text" name='nama_barang' placeholder="" class="form-control"/>
+								</div>
+						</div>
+						<div class="form-group row m-b-10">
+							<label class="col-lg-3 text-lg-left col-form-label">Nilai Barang</label>
+								<div class="col-lg-9 col-xl-6">
+									<input type="text" name='nilai_barang' placeholder="" class="form-control"/>
+								</div>
+						</div>
+						<div class="form-group row m-b-10">
+							<label class="col-lg-3 text-lg-left col-form-label">Nama Penerima</label>
+								<div class="col-lg-9 col-xl-6">
+									<input type="text" name='nama_penerima' placeholder="" class="form-control"/>
+								</div>
+						</div>
+						
+						<div class="form-group row m-b-10">
+							<label class="col-lg-3 text-lg-left col-form-label">Status</label>
+								<div class="col-lg-9 col-xl-6">
+									<textarea name='status' class="form-control" rows="3"></textarea>	
+								</div>
+						</div>
+						
+						<h5>Tahap I Penetapan Status Penggunaan BMN</h5> </br>
+
+						<div class="form-group row m-b-10">
+							<label class="col-lg-3 text-lg-left col-form-label">Surat Usulan Penetapan Status Penggunaan BMN</label>
+								<div class="col-lg-9 col-xl-6">
+									<input type="file" name="file_1" class="form-control">	
+								</div>
+						</div>
+
+						<h5>Tahap II Pengumpulan Data Dukung</h5></br>
+
+						<div class="form-group row m-b-10">
+							<label class="col-lg-3 text-lg-left col-form-label">SK. Penetapan Status Penggunaan BMN</label>
+								<div class="col-lg-9 col-xl-6">
+									<input type="file" name="file_2" class="form-control">	
+								</div>
+						</div>
+
+						<div class="form-group row m-b-10">
+							<label class="col-lg-3 text-lg-left col-form-label">BAST. Pihak Pemberi & Penerima</label>
+								<div class="col-lg-9 col-xl-6">
+									<input type="file" name="file_3" class="form-control">	
+								</div>
+						</div>
+
+						<div class="form-group row m-b-10">
+							<label class="col-lg-3 text-lg-left col-form-label">Surat Pernyataan Bersedia Menerima Hibah</label>
+								<div class="col-lg-9 col-xl-6">
+									<input type="file" name="file_4" class="form-control">	
+								</div>
+						</div>
+
+						<div class="form-group row m-b-10">
+							<label class="col-lg-3 text-lg-left col-form-label">Foto / Dokumentasi Hibah</label>
+								<div class="col-lg-9 col-xl-6">
+									<input type="file" name="file_5" class="form-control">	
+								</div>
+						</div>
+
+						<div class="form-group row m-b-10">
+							<label class="col-lg-3 text-lg-left col-form-label">Fotokopi POK/DIPA</label>
+								<div class="col-lg-9 col-xl-6">
+									<input type="file" name="file_6" class="form-control">	
+								</div>
+						</div>
+
+						<h5>Tahap III Usulan Permohonan Persetujuan Hibah</h5> </br>
+
+						<div class="form-group row m-b-10">
+							<label class="col-lg-3 text-lg-left col-form-label">Surat Usulan Permohonan Persetujuan Hibah</label>
+								<div class="col-lg-9 col-xl-6">
+									<input type="file" name="file_7" class="form-control">	
+								</div>
+						</div>
+
+						<div class="form-group row m-b-10">
+							<label class="col-lg-3 text-lg-left col-form-label">SK. Pembentukan TIM Internal Hibah</label>
+								<div class="col-lg-9 col-xl-6">
+									<input type="file" name="file_8" class="form-control">	
+								</div>
+						</div>
+
+						<div class="form-group row m-b-10">
+							<label class="col-lg-3 text-lg-left col-form-label">Berita Acara Penelitian</label>
+								<div class="col-lg-9 col-xl-6">
+									<input type="file" name="file_9" class="form-control">	
+								</div>
+						</div>
+
+						<div class="form-group row m-b-10">
+							<label class="col-lg-3 text-lg-left col-form-label">Surat Pernyataan</label>
+								<div class="col-lg-9 col-xl-6">
+									<input type="file" name="file_10" class="form-control">	
+								</div>
+						</div></br>
+
+
+						<div class="form-group row m-b-10">
+							<label class="col-lg-3 text-lg-left col-form-label">Surat Pernyataan Tanggung Jawab</label>
+								<div class="col-lg-9 col-xl-6">
+									<input type="file" name="file_11" class="form-control">	
+								</div>
+						</div></br>
+
+						<div class="form-group row m-b-10">
+							<label class="col-lg-3 text-lg-left col-form-label">Alasan Hibah</label>
+								<div class="col-lg-9 col-xl-6">
+									<input type="file" name="file_12" class="form-control">	
+								</div>
+						</div></br>
+
+						<h5>Tahap IV Naskah Hibah dan BAST Akhir Kepada Pihak Penerima</h5> </br>
+
+						<div class="form-group row m-b-10">
+							<label class="col-lg-3 text-lg-left col-form-label">Naskah Hibah yang Ditanda Tangani</label>
+								<div class="col-lg-9 col-xl-6">
+									<input type="file" name="file_13" class="form-control">	
+								</div>
+						</div>
+
+						<div class="form-group row m-b-10">
+							<label class="col-lg-3 text-lg-left col-form-label">BAST Akhir yang Ditanda Tangani</label>
+								<div class="col-lg-9 col-xl-6">
+									<input type="file" name="file_14" class="form-control">	
+								</div>
+						</div>
+
+						<h5>Tahap V Usulan Permohonan SK. Penghapusan BMN</h5> </br>
+
+						<div class="form-group row m-b-10">
+							<label class="col-lg-3 text-lg-left col-form-label">Surat Usulan Permohonan SK. Penghapusan Hibah</label>
+								<div class="col-lg-9 col-xl-6">
+									<input type="file" name="file_15" class="form-control">	
+								</div>
+						</div>
+						
+						<div class="form-group row m-b-10">
+							<label class="col-lg-3 text-lg-left col-form-label"></label>
+								<div class="col-lg-9 col-xl-6">
+									<button type="submit" name="submit" class="btn btn-info"><i class="ace-icon fa fa-check bigger-110"></i>Simpan</button>
+								</div>
+						</div>								
+					</div>
+			</div>			
+		</fieldset>
+			
+							</form>
+							<?php
+							}
+							?>		
+						
+		</div>
+	</div>
